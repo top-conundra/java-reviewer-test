@@ -14,13 +14,13 @@ public class Deadlock {
         return stopped;
     }
 
-    public synchronized void stopProcess() {
+    public void stopProcess() {
         synchronized (process) {
             System.out.println("Stopping...");
         }
     }
 
-    public static void main(String args[]) throws InterruptedException {
+    public static void main(String[] args) {
         Deadlock deadlock = new Deadlock();
 
         Thread threadA = new Thread(() -> {
